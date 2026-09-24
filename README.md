@@ -102,7 +102,7 @@ document-system/
 │   ├── utils/
 │   │   └── logger.js
 │   │
-│   ├── app.js
+│   |
 │   └── server.js
 │
 ├── .env
