@@ -545,3 +545,75 @@ The project submission includes:
 * README documentation
 * Testing evidence
 * Architecture explanation
+
+## Policy Type
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3BucketAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::student-document-system-satyam",
+        "arn:aws:s3:::student-document-system-satyam/*"
+      ]
+    },
+    {
+      "Sid": "S3GlobalAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNSPublishAccess",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Publish"
+      ],
+      "Resource": "arn:aws:sns:ap-south-1:399779591596:document-upload-notification"
+    },
+    {
+      "Sid": "CloudWatchMonitoringAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:Get*",
+        "cloudwatch:List*",
+        "cloudwatch:Describe*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchLogsReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "logs:Describe*",
+        "logs:Get*",
+        "logs:List*",
+        "logs:FilterLogEvents",
+        "logs:StartQuery",
+        "logs:StopQuery",
+        "logs:TestMetricFilter"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
